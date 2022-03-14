@@ -10,7 +10,13 @@ const items = deadline.querySelectorAll('h4');
 
 // Giveaway end date
 // year, month (0 index, april = 3), day, hour ...
-let futureDate = new Date(2022,3,14,12,25,0,0);
+/* La futureDate est définie à chaque chargement de la page, sur une base
+de 10 jours à partir de maintenant ! */
+let tempDate = new Date();
+let tempYear = tempDate.getFullYear();
+let tempMonth = tempDate.getMonth();
+let tempDay = tempDate.getDate();
+const futureDate = new Date(tempYear, tempMonth, tempDay + 10, 11, 30, 0);
 const year = futureDate.getFullYear();
 const month = months[futureDate.getMonth()];
 // jour de la semaine
